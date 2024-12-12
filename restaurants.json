@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Піца плюс",
+        "time_of_delivery": "50 хвилин",
+        "price": "від 200 ₴",
+        "stars": "4.5",
+        "kitchen": "Піца",
+        "image": "img/pizza-plus/preview.jpg",
+        "products": "pizza.json"
+    },
+    {
+        "name": "Танукі",
+        "time_of_delivery": "60 хвилин",
+        "price": "від 1 200 ₴",
+        "stars": "4.5",
+        "kitchen": "Суші, роли",
+        "image": "img/tanuki/preview.jpg",
+        "products": "tanuki.json"
+    },
+    {
+        "name": "FoodBand",
+        "time_of_delivery": "40 хвилин",
+        "price": "від 150 ₴",
+        "stars": "4.5",
+        "kitchen": "Піца",
+        "image": "img/food-band/preview.jpg",
+        "products": "foodband.json"
+    },
+    {
+        "name": "Ikigai",
+        "time_of_delivery": "55 хвилин",
+        "price": "від 250 ₴",
+        "stars": "4.5",
+        "kitchen": "Піца",
+        "image": "img/palki-skalki/preview.jpg",
+        "products": "ikigai.json"
+    },
+    {
+        "name": "Пузата хата",
+        "time_of_delivery": "75 хвилин",
+        "price": "від 300 ₴",
+        "stars": "4.5",
+        "kitchen": "Українські страви",
+        "image": "img/gusi-lebedi/preview.jpg",
+        "products": "puzata-hata.json"
+    },
+    {
+        "name": "PizzaBurger",
+        "time_of_delivery": "45 хвилин",
+        "price": "від 700 ₴",
+        "stars": "4.5",
+        "kitchen": "Піца",
+        "image": "img/pizza-burger/preview.jpg",
+        "products": "pizzaburger.json"
+    }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Піца Плюс",
+    "time_of_delivery": 50,
+    "stars": 4.5,
+    "price": 900,
+    "kitchen": "Піца",
+    "image": "img/pizza-plus/preview.jpg",
+    "products": "pizza-plus.json"
+  },
+  {
+    "name": "Танукі",
+    "time_of_delivery": 60,
+    "stars": 4.3,
+    "price": 1200,
+    "kitchen": "Суші, роли",
+    "image": "img/tanuki/preview.jpg",
+    "products": "tanuki.json"
+  },
+  {
+    "name": "FoodBand",
+    "time_of_delivery": 40,
+    "stars": 4.4,
+    "price": 450,
+    "kitchen": "Піца",
+    "image": "img/food-band/preview.jpg",
+    "products": "food-band.json"
+  },
+  {
+    "name": "Ікігай",
+    "time_of_delivery": 55,
+    "stars": 4.1,
+    "price": 500,
+    "kitchen": "Піца",
+    "image": "img/ikigai/preview.jpg",
+    "products": "ikigai.json"
+  },
+  {
+    "name": "Пузата хата",
+    "time_of_delivery": 75,
+    "stars": 4.7,
+    "price": 1000,
+    "kitchen": "Українська кухня",
+    "image": "img/puzata-hata/preview.jpg",
+    "products": "puzata-hata.json"
+  },
+  {
+    "name": "PizzaBurger",
+    "time_of_delivery": 45,
+    "stars": 4.6,
+    "price": 700,
+    "kitchen": "Піца",
+    "image": "img/pizza-burger/preview.jpg",
+    "products": "pizza-burger.json"
+  }
+]
