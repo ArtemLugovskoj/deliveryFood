@@ -248,3 +248,37 @@ function createMenuItemCard(product) {
     const cardsMenu = document.querySelector(".cards-menu");
     cardsMenu.insertAdjacentHTML("beforeend", card);
 }
+
+const searchInput = document.querySelector(".input-search");
+
+function searchRestaurants() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const restaurantCards = document.querySelectorAll(".card-restaurant");
+
+    restaurantCards.forEach((card) => {
+        const title = card.querySelector(".card-title").textContent.toLowerCase();
+        const category = card.querySelector(".category").textContent.toLowerCase();
+        if (title.includes(searchTerm) || category.includes(searchTerm)) {
+            card.style.display = "block"; 
+        } else {
+            card.style.display = "none"; 
+        }
+    });
+}
+
+function highlightInput() {
+    searchInput.classList.add("input-error"); 
+    setTimeout(() => searchInput.classList.remove("input-error"), 3000); 
+}
+
+searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm === "") {
+            highlightInput(); 
+        } else {
+            searchRestaurants(); 
+        }
+    }
+});
