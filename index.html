@@ -20,7 +20,7 @@
     <body>
         <div class="container">
             <header class="header">
-                <a class="logo">
+                <a href="index.html" class="logo">
                     <img src="img/icon/logo.svg" alt="Logo" />
                 </a>
                 <label class="address">
@@ -36,13 +36,18 @@
                         <span class="button-auth-svg"></span>
                         <span class="button-text">Увійти</span>
                     </button>
-                    <button class="button button-cart" id="cart-button">
+                    <button class="button" id="cart-button">
                         <span class="button-cart-svg"></span>
                         <span class="button-text">Кошик</span>
+                        <span class="cart-count" id="cart-count">(0)</span>
                     </button>
-                    <button class="button button-primary button-out">
+                    <button class="button button-out" style="display: none">
+                        <img
+                            src="img/icon/logout.svg"
+                            alt="Logout Icon"
+                            class="logout-icon"
+                        />
                         <span class="button-text">Вийти</span>
-                        <span class="button-out-svg"></span>
                     </button>
                 </div>
             </header>
@@ -50,58 +55,62 @@
 
         <main class="main">
             <div class="container">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <section class="promo pizza">
-                                <h1 class="promo-title">
-                                    Онлайн-сервіс <br />доставки їжі додому
-                                </h1>
-                                <p class="promo-text">
-                                    Страви з улюбленого ресторану привезе кур'єр
-                                </p>
-                            </section>
+                <section class="containerPromo">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <section class="promo pizza">
+                                    <h1 class="promo-title">
+                                        Онлайн-сервіс <br />доставки їжі додому
+                                    </h1>
+                                    <p class="promo-text">
+                                        Страви з улюбленого ресторану привезе
+                                        кур'єр
+                                    </p>
+                                </section>
+                            </div>
+                            <div class="swiper-slide">
+                                <section class="promo kebab">
+                                    <h1 class="promo-title">
+                                        Шашлики <br />
+                                        зі знижкою 35%
+                                    </h1>
+                                    <p class="promo-text">
+                                        Замовте шашлики у будь-якому ресторані
+                                        до 24 серпня та отримайте знижку за
+                                        промокодом
+                                    </p>
+                                </section>
+                            </div>
+                            <div class="swiper-slide">
+                                <section class="promo vegetables">
+                                    <h1 class="promo-title">
+                                        Знижка 20% на всю їжу <br />
+                                        за промокодом LOVE.JS
+                                    </h1>
+                                    <p class="promo-text">
+                                        Страву з ресторану привезуть разом із
+                                        двома подарунковими книгами по фронтенду
+                                    </p>
+                                </section>
+                            </div>
+                            <div class="swiper-slide">
+                                <section class="promo sushi">
+                                    <h1 class="promo-title">
+                                        Сети зі знижкою до 30% <br />
+                                        у ресторанах
+                                    </h1>
+                                    <p class="promo-text">
+                                        Знижки на сети до 1 вересня за
+                                        промокодом DADADA
+                                    </p>
+                                </section>
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <section class="promo kebab">
-                                <h1 class="promo-title">
-                                    Шашлики <br />
-                                    зі знижкою 35%
-                                </h1>
-                                <p class="promo-text">
-                                    Замовте шашлики у будь-якому ресторані до 24
-                                    серпня та отримайте знижку за промокодом
-                                </p>
-                            </section>
-                        </div>
-                        <div class="swiper-slide">
-                            <section class="promo vegetables">
-                                <h1 class="promo-title">
-                                    Знижка 20% на всю їжу <br />
-                                    за промокодом LOVE.JS
-                                </h1>
-                                <p class="promo-text">
-                                    Страву з ресторану привезуть разом із двома
-                                    подарунковими книгами по фронтенду
-                                </p>
-                            </section>
-                        </div>
-                        <div class="swiper-slide">
-                            <section class="promo sushi">
-                                <h1 class="promo-title">
-                                    Сети зі знижкою до 30% <br />
-                                    у ресторанах
-                                </h1>
-                                <p class="promo-text">
-                                    Знижки на сети до 1 вересня за промокодом
-                                    DADADA
-                                </p>
-                            </section>
-                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                </section>
 
                 <section class="restaurants">
                     <div class="section-heading">
@@ -115,6 +124,13 @@
                         </label>
                     </div>
                     <div class="cards cards-restaurants"></div>
+                </section>
+
+                <section class="search-results hide">
+                    <div class="section-heading">
+                        <h2 class="section-title">Результати пошуку</h2>
+                    </div>
+                    <div class="cards cards-menu"></div>
                 </section>
             </div>
         </main>
@@ -134,14 +150,15 @@
                         <a href="#" class="footer-link">Контакти</a>
                     </nav>
                     <div class="social-links">
-                        <a href="#" class="social-link"
-                            ><img
+                        <a href="#" class="social-link">
+                            <img
                                 src="img/social/instagram.svg"
                                 alt="instagram"
-                        /></a>
-                        <a href="#" class="social-link"
-                            ><img src="img/social/fb.svg" alt="facebook"
-                        /></a>
+                            />
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/social/fb.svg" alt="facebook" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -156,9 +173,10 @@
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <span class="modal-pricetag">0 &#8372;</span>
-                    <div class="footer-buttons">
-                        <button class="button button-primary">
+                    <span class="modal-pricetag">0 грн</span>
+                    
+                    <div class="footer-buttons" style="margin-top: 10px;">
+                        <button class="button button-primary" id="order-button">
                             Оформити замовлення
                         </button>
                         <button class="button clear-cart">Скасувати</button>
@@ -188,7 +206,6 @@
                             </p>
                         </label>
                     </fieldset>
-
                     <div class="modal-footer">
                         <div class="footer-text">
                             <p

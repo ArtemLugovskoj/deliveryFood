@@ -2,10 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Delivery Food — доставка їжі додому</title>
         <link
             href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic"
@@ -34,12 +31,18 @@
                         <span class="button-auth-svg"></span>
                         <span class="button-text">Увійти</span>
                     </button>
-                    <button class="button button-primary button-out">
-                        <span class="button-text">Вийти</span>
-                    </button>
                     <button class="button" id="cart-button">
                         <span class="button-cart-svg"></span>
                         <span class="button-text">Кошик</span>
+                        <span class="cart-count" id="cart-count">(0)</span>
+                    </button>
+                    <button class="button button-out" style="display: none">
+                        <img
+                            src="img/icon/logout.svg"
+                            alt="Logout Icon"
+                            class="logout-icon"
+                        />
+                        <span class="button-text">Вийти</span>
                     </button>
                 </div>
             </header>
@@ -95,11 +98,23 @@
                     <h3 class="modal-title">Кошик</h3>
                     <button class="close">&times;</button>
                 </div>
-                <div class="modal-body"></div>
+                <label for="phone-number" style="display: block; margin-top: 10px; margin-bottom: 60px;">
+                    Номер телефону:
+                    <input
+                        type="tel"
+                        id="phone-number"
+                        class="input input-phone"
+                        placeholder="Ваш номер телефону"
+                        required
+                    />
+                </label>
+                <div class="modal-body">
+                </div>
                 <div class="modal-footer">
-                    <span class="modal-pricetag">0 &#8372;</span>
-                    <div class="footer-buttons">
-                        <button class="button button-primary">
+                    <span class="modal-pricetag">0 грн</span>
+                    
+                    <div class="footer-buttons" style="margin-top: 10px;">
+                        <button class="button button-primary" id="order-button">
                             Оформити замовлення
                         </button>
                         <button class="button clear-cart">Скасувати</button>
