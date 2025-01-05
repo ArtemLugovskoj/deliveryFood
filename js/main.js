@@ -1,3 +1,23 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD9xTjje1en1tBNl_9Iyc1kBQnS6Apt6j0",
+    authDomain: "pr5-8-8e1ce.firebaseapp.com",
+    databaseURL: "https://pr5-8-8e1ce-default-rtdb.firebaseio.com",
+    projectId: "pr5-8-8e1ce",
+    storageBucket: "pr5-8-8e1ce.firebasestorage.app",
+    messagingSenderId: "236101239806",
+    appId: "1:236101239806:web:a17f87313d3a8784bf76af"
+  };
+
+  const app = initializeApp(firebaseConfig);
+
+
+const db = getFirestore(app);
+
+console.log(app);
+
 const authButton = document.querySelector(".button-auth");
 const outButton = document.querySelector(".button-out");
 const userNameSpan = document.getElementById("user-name");
@@ -470,4 +490,49 @@ function createMenuItemCard(product) {
     `;
     const cardsMenu = document.querySelector(".cards-menu");
     cardsMenu.insertAdjacentHTML("beforeend", card);
+}
+
+async function submitOrder() {
+    const phoneInput = modalCart.querySelector("#phone-number");
+    const phoneNumber = phoneInput.value.trim();
+
+    if (!phoneNumber) {
+        alert("Будь ласка, введіть номер телефону.");
+        return;
+    }
+
+    const user = getUser();
+    if (!user) {
+        alert("Користувач не авторизований.");
+        return;
+    }
+
+    if (cart.length === 0) {
+        alert("Ваш кошик порожній.");
+        return;
+    }
+
+    const order = {
+        userId: user.login, 
+        phoneNumber: phoneNumber,
+        items: cart.map(item => ({
+            id: item.id,
+            title: item.title,
+            cost: item.cost,
+            count: item.count
+        })),
+        totalPrice: cart.reduce((sum, item) => sum + item.cost * item.count, 0),
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        await addDoc(collection(db, "orders"), order);
+        alert("Замовлення оформлено!");
+        clearCart();
+        toggleModalCart();
+        phoneInput.value = "";
+    } catch (error) {
+        console.error("Помилка при оформленні замовлення:", error);
+        alert("Сталася помилка при оформленні замовлення.");
+    }
 }
